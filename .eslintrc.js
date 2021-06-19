@@ -6,7 +6,8 @@ module.exports = {
   extends: [
     'airbnb',
     'prettier',
-    'prettier/react',
+    'eslint:recommended',
+    'plugin:react/recommended',
   ],
   parser: 'babel-eslint',
   parserOptions: {
@@ -16,15 +17,27 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react', 'prettier', 'jsx-a11y'],
   rules: {
     'prettier/prettier': 'error',
-    'react/jsx-filename-extension': [
-      'warn',
-      { extensions: ['.jsx', '.js'] },
+    'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
+    'import/prefer-default-export': 'off',
+    'label-has-associated-control': 'off',
+    'jsx-a11y/no-redundant-roles': [
+      'error',
+      {
+        nav: ['navigation'],
+      },
     ],
-    'import/prefer-default-export': 'off'
+    'jsx-a11y/label-has-for': [
+      'off',
+      {
+        components: [],
+        required: {
+          every: ['nesting', 'id'],
+        },
+        allowChildren: false,
+      },
+    ],
   },
 };
