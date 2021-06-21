@@ -2,21 +2,17 @@ import React from "react";
 
 // import { Container } from './styles';
 
-function RegisterModal() {
-  return (
-    <>
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal"
-      >
-        Launch demo modal
-      </button>
+const RegisterModal = ({ handleClose, show, children }) => {
+  const showHide = show ? "modal display-block" : "modal display-none";
 
-      
-    </>
+  return (
+    <div className={showHide}>
+      <section className="modal-main">
+        {children}
+        <button type="button" onClick={handleClose}></button>
+      </section>
+    </div>
   );
-}
+};
 
 export default RegisterModal;

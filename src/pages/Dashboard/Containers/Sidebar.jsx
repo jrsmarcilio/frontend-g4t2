@@ -16,18 +16,17 @@ import { RiContactsLine } from "react-icons/ri";
 import { MdSchedule } from "react-icons/md";
 
 const Sidebar = () => {
-  const [formData, setFormData] = useState([]);
+  const [formRegister, setFormRegister] = useState([]);
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show, setShowRegister] = useState(false);
+  const handleCloseRegister = () => setShowRegister(false);
+  const handleShowRegister = () => setShowRegister(true);
 
   async function handleRegister(e) {
     e.preventDefault();
-    console.log(formData);
 
     await api
-      .post("/patient", formData, {
+      .post("/patient", formRegister, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -109,21 +108,19 @@ const Sidebar = () => {
             aria-expanded="true"
             aria-controls="collapseUtilities"
           >
-            <MdSchedule /> {" "}
-            <span>Agendar Atendimento</span>
+            <MdSchedule /> <span>Agendar Atendimento</span>
           </Button>
         </li>
         <li className="nav-item">
           <Button
-            onClick={handleShow}
+            onClick={handleShowRegister}
             className="nav-link collapsed"
             data-toggle="collapse"
             data-target="#collapseUtilities"
             aria-expanded="true"
             aria-controls="collapseUtilities"
           >
-            <RiContactsLine />{" "}
-            <span>Cadastrar Paciente</span>
+            <RiContactsLine /> <span>Cadastrar Paciente</span>
           </Button>
         </li>
 
@@ -147,7 +144,7 @@ const Sidebar = () => {
             Baixe agora!
           </Link>
         </div>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleCloseRegister}>
           <Modal.Header closeButton>
             <Modal.Title>Cadastro de Paciente</Modal.Title>
           </Modal.Header>
@@ -165,7 +162,7 @@ const Sidebar = () => {
                     className="form-control"
                     id="InputName"
                     onChange={(e) =>
-                      setFormData({ ...formData, nome: e.target.value })
+                      setFormRegister({ ...formRegister, nome: e.target.value })
                     }
                   />
                 </div>
@@ -179,7 +176,7 @@ const Sidebar = () => {
                     id="InputCpf"
                     required
                     onChange={(e) =>
-                      setFormData({ ...formData, cpf: e.target.value })
+                      setFormRegister({ ...formRegister, cpf: e.target.value })
                     }
                   />
                 </div>
@@ -193,7 +190,7 @@ const Sidebar = () => {
                     id="InputTelefone"
                     required
                     onChange={(e) =>
-                      setFormData({ ...formData, telefone: e.target.value })
+                      setFormRegister({ ...formRegister, telefone: e.target.value })
                     }
                   />
                 </div>
@@ -208,7 +205,7 @@ const Sidebar = () => {
                     id="InputCelular"
                     required
                     onChange={(e) =>
-                      setFormData({ ...formData, celular: e.target.value })
+                      setFormRegister({ ...formRegister, celular: e.target.value })
                     }
                   />
                 </div>
@@ -223,7 +220,7 @@ const Sidebar = () => {
                     id="InputEmail"
                     required
                     onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
+                      setFormRegister({ ...formRegister, email: e.target.value })
                     }
                   />
                 </div>
@@ -232,8 +229,8 @@ const Sidebar = () => {
                     class="form-select"
                     aria-label="Default select example"
                     onChange={(e) =>
-                      setFormData({
-                        ...formData,
+                      setFormRegister({
+                        ...formRegister,
                         tipo_sanguineo: e.target.value,
                       })
                     }
@@ -252,10 +249,10 @@ const Sidebar = () => {
               </fieldset>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
+              <Button variant="secondary" onClick={handleCloseRegister}>
                 Fechar
               </Button>
-              <Button type="submit" className="button" onClick={handleClose}>
+              <Button type="submit" className="button" onClick={handleCloseRegister}>
                 Enviar Dados
               </Button>
             </Modal.Footer>

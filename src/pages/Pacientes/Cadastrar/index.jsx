@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
