@@ -1,5 +1,7 @@
 import React from "react";
 
+import ListaPacientes from "../../Pacientes/Listagem";
+
 import { Container } from "../styles";
 
 export default function DashBoard() {
@@ -124,22 +126,7 @@ export default function DashBoard() {
             </div>
             <div className="card-body">
               <div className="chart-area">
-                <p>
-                  Cheque todas as suas tarefas pendentes e prontuários. Lorem
-                  ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                  vitae elementum dui. Nunc lobortis erat non tellus fringilla
-                  dignissim. Sed nunc massa, varius eu metus sed, lobortis
-                  blandit diam. Duis eu massa egestas, ultricies lectus ac,
-                  egestas tortor. Vivamus feugiat, leo in hendrerit varius,
-                  neque augue tincidunt nisl, vitae tincidunt ante lacus congue
-                  eros. Donec eu ullamcorper turpis, nec dictum neque. In hac
-                  habitasse platea dictumst. Cras eget magna congue, sodales
-                  odio nec, tempus lorem. Nulla facilisi. Interdum et malesuada
-                  fames ac ante ipsum primis in faucibus. Donec iaculis orci
-                  nunc, sagittis dapibus purus cursus in. Vivamus diam risus,
-                  tristique vel rutrum in, commodo in justo. Proin non auctor
-                  arcu. Suspendisse quis mattis mi.{" "}
-                </p>
+                <ListaPacientes />
                 <canvas id="myAreaChart"></canvas>
               </div>
             </div>
@@ -150,7 +137,6 @@ export default function DashBoard() {
           <div className="card shadow mb-4">
             <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
               <h6 className="m-0 font-weight-bold text-primary">Calendário</h6>
-              
             </div>
 
             <div className="card-body">

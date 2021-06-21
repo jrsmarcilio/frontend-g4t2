@@ -4283,7 +4283,6 @@ export const Container = styled.body`
 
   .rounded-circle {
     border-radius: 50% !important;
-    
   }
 
   .rounded-pill {
@@ -7897,6 +7896,10 @@ export const Container = styled.body`
 
   .topbar.navbar-dark .navbar-nav .nav-item .nav-link {
     color: rgba(255, 255, 255, 0.8);
+
+    svg {
+      color: rgba(255, 255, 255, 0.8);
+    }
   }
 
   .topbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
@@ -8444,7 +8447,8 @@ export const Container = styled.body`
   .chart-area {
     position: relative;
     height: 10rem;
-    width: 100%;
+    width: 90rem;
+    /* width: 100%; */
   }
 
   @media (min-width: 768px) {
@@ -8552,10 +8556,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const UlContent = styled.ul`
+export const UlContent = styled.ul``;
 
-`;
-
-export const MainContent = styled.div`
-
-`;
+export const MainContent = styled.div``;

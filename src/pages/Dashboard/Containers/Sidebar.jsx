@@ -12,6 +12,9 @@ import { Container, UlContent } from "../styles";
 
 import api from "../../../services/api";
 
+import { RiContactsLine } from "react-icons/ri";
+import { MdSchedule } from "react-icons/md";
+
 const Sidebar = () => {
   const [formData, setFormData] = useState([]);
 
@@ -89,7 +92,6 @@ const Sidebar = () => {
         <li className="nav-item">
           <Button
             className="nav-link collapsed"
-            href="/login"
             data-toggle="collapse"
             data-target="#collapseUtilities"
             aria-expanded="true"
@@ -107,8 +109,8 @@ const Sidebar = () => {
             aria-expanded="true"
             aria-controls="collapseUtilities"
           >
-            <i className="fas fa-fw fa-wrench"></i>
-            <span>Mensagens</span>
+            <MdSchedule /> {" "}
+            <span>Agendar Atendimento</span>
           </Button>
         </li>
         <li className="nav-item">
@@ -120,8 +122,8 @@ const Sidebar = () => {
             aria-expanded="true"
             aria-controls="collapseUtilities"
           >
-            <i className="fas fa-fw fa-wrench"></i>
-            <span>Cadastro Paciente</span>
+            <RiContactsLine />{" "}
+            <span>Cadastrar Paciente</span>
           </Button>
         </li>
 

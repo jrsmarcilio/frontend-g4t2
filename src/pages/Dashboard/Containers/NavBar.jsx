@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
-import { Container } from "../styles";
-
-import Profile from "../../../assets/img/profile.png";
-import { Dropdown } from "react-bootstrap";
-
+import Dropdown from "react-bootstrap/Dropdown";
 import { FiLogOut } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 
+import Profile from "../../../assets/img/profile.png";
+import { Container } from "../styles";
+
 export default function NavBar() {
   const [redirect, setRedirect] = useState(false);
-
-  const userName = localStorage.getItem("userName");
+  const userName = localStorage.getItem("nome");
 
   const Logout = () => {
     localStorage.clear("token");
+    localStorage.clear("nome");
     setRedirect(true);
   };
 
